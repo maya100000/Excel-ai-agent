@@ -1,0 +1,198 @@
+{
+  "client_id": "contact_center_il",
+  "client_name": "Israeli Contact Center",
+  "domain": "contact_center",
+  "language": "hebrew",
+  "version": "1.0.0",
+
+  "work_week": {
+    "workdays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+    "weekend": ["Friday", "Saturday"],
+    "note": "Israeli work week — Friday and Saturday are weekend"
+  },
+
+  "sheet_translation": {
+    "אפריל 24": "April_2024",
+    "מאי 24": "May_2024",
+    "יוני 24": "June_2024",
+    "אוגוסט 24": "August_2024",
+    "ספט 24": "September_2024",
+    "ינואר 25": "January_2025",
+    "פברואר 25": "February_2025",
+    "מרץ 25": "March_2025",
+    "אפריל 25": "April_2025",
+    "מאי 25": "May_2025",
+    "יוני 25": "June_2025",
+    "יולי 25": "July_2025",
+    "אוגוסט 25": "August_2025",
+    "ספטמבר 25": "September_2025",
+    "נציגים": "Agents",
+    "חיזוי אוגוסט+ספט": "Forecast_Aug_Sep",
+    "חיזוי-תוצאות וסטיות": "Forecast_vs_Actuals"
+  },
+
+  "month_order": [
+    "April_2024",
+    "May_2024",
+    "June_2024",
+    "August_2024",
+    "September_2024",
+    "January_2025",
+    "February_2025",
+    "March_2025",
+    "April_2025",
+    "May_2025",
+    "June_2025",
+    "July_2025",
+    "August_2025",
+    "September_2025"
+  ],
+
+  "column_mapping": {
+    "תאריך": "date",
+    "יום": "day_of_week",
+    "פניות כתובות נפתחו": "written_inquiries",
+    "שיחות נכנסות": "inbound_calls",
+    "הערות": "notes",
+    "מספר נציגים": "num_agents",
+    "שיחות ללא כפילויות": "unique_calls",
+    "פיק": "is_peak_day",
+    "עזר": "aux_calls",
+    "אחוז": "aux_pct",
+    "נציג": "agent_name",
+    "זמן שיחה+החזק": "avg_handle_time",
+    "עמידה בשעות": "hours_compliance",
+    "שיחות לשעה גולמי": "calls_per_hour_gross",
+    "תחזית פניות": "forecast_inquiries",
+    "חיזוי שיחות סופי": "final_forecast_calls",
+    "פניות נתון אמת": "actual_inquiries",
+    "שיחות נתון אמת": "actual_calls",
+    "סטייה פניות": "deviation_inquiries",
+    "סטייה שיחות": "deviation_calls",
+    "מגמה פניות": "trend_inquiries",
+    "מגמה שיחות": "trend_calls",
+    "נציגים צפויים": "expected_agents",
+    "מספר שעות": "total_hours",
+    "כדי להגיע ליעד": "calls_needed_for_target"
+  },
+
+  "day_translation": {
+    "יום ראשון": "Sunday",
+    "יום שני": "Monday",
+    "יום שלישי": "Tuesday",
+    "יום רביעי": "Wednesday",
+    "יום חמישי": "Thursday",
+    "יום שישי": "Friday",
+    "שבת": "Saturday"
+  },
+
+  "notes_translation": {
+    "חופש": "holiday",
+    "נוכחות": "payroll_day",
+    "שכר": "payroll_day",
+    "שכר,תלוש?": "payroll_day",
+    "תלוש": "payslip_day",
+    "תקשור היעדרות מלחמה": "war_absence_notice",
+    "ט באב": "Tisha_BAv",
+    "ערב חג (ללא שיחות)": "holiday_eve_no_calls",
+    "חזרה ללימודים": "back_to_school",
+    "תחילת לימודים": "start_of_school_year",
+    "חזרה מחופש ראש השנה": "return_from_rosh_hashana",
+    "52": "week_52_annotation",
+    "ממוצע שיחות ללא משה ותמר": "avg_excl_two_agents"
+  },
+
+  "business_events": {
+    "high_volume": [
+      "payroll_day",
+      "payslip_day",
+      "war_absence_notice",
+      "back_to_school",
+      "start_of_school_year",
+      "return_from_rosh_hashana",
+      "Tisha_BAv"
+    ],
+    "holiday": ["holiday", "holiday_eve_no_calls"],
+    "descriptions": {
+      "payroll_day": "Payday — employees receive paycheck. Expected +30 to 60% call volume.",
+      "payslip_day": "Payslip published online. Expected +74 to 190% spike.",
+      "war_absence_notice": "Company notice about war-related absences. Expected +93% spike.",
+      "back_to_school": "Start of school year. Expected +210% spike.",
+      "holiday": "Public holiday or day off. Zero or minimal calls.",
+      "Tisha_BAv": "Jewish fast day. Reduced staffing expected."
+    }
+  },
+
+  "kpis": {
+    "total_inbound_calls": {
+      "label": "Total Inbound Calls",
+      "column": "inbound_calls",
+      "aggregation": "sum",
+      "scope": "workdays_only"
+    },
+    "total_written_inquiries": {
+      "label": "Total Written Inquiries",
+      "column": "written_inquiries",
+      "aggregation": "sum",
+      "scope": "workdays_only"
+    },
+    "avg_agents_on_shift": {
+      "label": "Avg Agents On Shift",
+      "column": "num_agents",
+      "aggregation": "mean",
+      "scope": "workdays_only"
+    },
+    "total_unique_calls": {
+      "label": "Total Unique Calls",
+      "column": "unique_calls",
+      "aggregation": "sum",
+      "scope": "workdays_only"
+    }
+  },
+
+  "anomaly_detection": {
+    "method": "z_score",
+    "threshold": 2.0,
+    "column": "inbound_calls",
+    "scope": "workdays_only",
+    "min_rows_required": 5
+  },
+
+  "agent_sheet": {
+    "sheet_name": "Agents",
+    "name_column": "agent_name",
+    "rank_by": "calls_per_hour_gross",
+    "rank_order": "descending",
+    "display_cols": [
+      "agent_name",
+      "avg_handle_time",
+      "hours_compliance",
+      "calls_per_hour_gross"
+    ]
+  },
+
+  "output": {
+    "highlight_colors": {
+      "weekend": "E0E0E0",
+      "holiday": "D0E8FF",
+      "payroll_day": "FFF2CC",
+      "payslip_day": "FFF2CC",
+      "war_absence_notice": "FFD0D0",
+      "anomaly_spike": "FFAAAA",
+      "anomaly_dip": "AAC8FF",
+      "anomaly_expected": "FFE5A0",
+      "monthly_summary": "E2EFDA",
+      "kpi_sheet": "FFF2CC",
+      "agent_sheet": "EBF3FB",
+      "event_impact": "EDE7F6"
+    },
+    "header_color": "1F4E79",
+    "header_font_color": "FFFFFF"
+  },
+
+  "llm": {
+    "model": "claude-opus-4-5",
+    "max_tokens": 2000,
+    "system_prompt": "You are an expert contact center operations analyst for an Israeli contact center. Work week is Sunday to Thursday — Friday and Saturday are always weekend and excluded from all averages and KPIs. Business events like payroll days, payslip days, and war-related notices significantly affect call volumes and are annotated in the data. Be specific, quantitative, and professional. Reference exact months and dates when relevant. Explain business events when they cause anomalies."
+  }
+}
