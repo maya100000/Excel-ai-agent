@@ -1,6 +1,6 @@
 # 🤖 Excel AI Agent – Business Data Automation
 
-🚀 **Live Demo:** [Open the App](YOUR_STREAMLIT_LINK_HERE)
+🚀 **Live Demo:** [Open the App](https://excel-ai-agent-bwdzp4vdxhjshykzqg9pjw.streamlit.app/)
 
 ---
 
